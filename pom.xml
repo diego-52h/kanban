@@ -13,20 +13,24 @@
 		
 		<plugins>
 			<plugin>
-				<groupId> org.apache.maven.plugins </groupId>
-				<artifactId> maven-jar-plugin </artifactId>
-				<version> 2.1 </version>
+				<groupId> org.openjfx </groupId>
+				<artifactId> javafx-maven-plugin </artifactId>
+				<version> 0.0.8 </version>
 				
 				<configuration>
-					<archive>
-						<manifest>
-							<mainClass> kanban.ui.App </mainClass>
-						</manifest>
-					</archive>
+					<mainClass> kanban.ui.App </mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+	
+	<dependencies>
+		<dependency>
+			<groupId> org.openjfx </groupId>
+			<artifactId> javafx-controls </artifactId>
+			<version> 22 </version>
+		</dependency>
+	</dependencies>
 	
 	<properties>
 		<maven.compiler.source> 21 </maven.compiler.source>

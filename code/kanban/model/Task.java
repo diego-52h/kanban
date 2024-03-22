@@ -1,4 +1,4 @@
-package kanban.logic;
+package kanban.model;
 
 public class Task
 {

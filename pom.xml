@@ -11,6 +11,12 @@
 		<sourceDirectory> ./code </sourceDirectory>
 		<outputDirectory> ./exec/classes </outputDirectory>
 		
+		<resources>
+			<resource>
+				<directory> ./code/kanban/view </directory>
+			</resource>
+		</resources>
+		
 		<plugins>
 			<plugin>
 				<groupId> org.openjfx </groupId>
@@ -30,9 +36,17 @@
 			<artifactId> javafx-controls </artifactId>
 			<version> 22 </version>
 		</dependency>
+		
+		<dependency>
+			<groupId> org.openjfx </groupId>
+			<artifactId> javafx-fxml </artifactId>
+			<version> 22 </version>
+		</dependency>
 	</dependencies>
 	
 	<properties>
+		<javafx.version> 22 </javafx.version>
+		
 		<maven.compiler.source> 21 </maven.compiler.source>
 		<maven.compiler.target> 21 </maven.compiler.target>
 	</properties>

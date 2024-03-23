@@ -13,6 +13,12 @@
 	-fx-alignment: top-center;
 }
 
+#category:focused
+{
+	-fx-border-style: dashed;
+	-fx-border-color: #3584E4;
+}
+
 #title
 {
 	-fx-font-size: 20;
@@ -24,7 +30,7 @@
 	-fx-text-alignment: center;
 }
 
-#list
+#tasks
 {
 	-fx-padding: 5;
 	-fx-spacing: 15;

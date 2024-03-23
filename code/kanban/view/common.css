@@ -9,7 +9,7 @@
 	-fx-border-color: #D8D8D8;
 	-fx-border-radius: 6;
 	
-	-fx-background-color: #F0EEF5;
+	-fx-background-color: #F5F5F5;
 	-fx-background-radius: 6;
 	
 	-fx-min-width: 150;
@@ -30,16 +30,16 @@
 
 .menu-item .label
 {
-	-fx-text-fill: #89909C;
+	-fx-text-fill: #717171;
 }
 
 .menu-item:focused
 {
-	-fx-background-color: #E4E3EF;
+	-fx-background-color: #E9E9E9;
 	-fx-background-radius: 5;
 }
 
 .menu-item:focused .label
 {
-	-fx-text-fill: #424652;
+	-fx-text-fill: #424242;
 }

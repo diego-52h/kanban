@@ -11,7 +11,7 @@
 <fx:root id = "board" type = "javafx.scene.layout.BorderPane" xmlns:fx = "http://javafx.com/fxml">
 	<top>
 		<HBox id = "topPane">
-			<Label id = "title" text = "Kanban Board" HBox.hgrow = "ALWAYS"/>
+			<Label fx:id = "title" id = "title" HBox.hgrow = "ALWAYS"/>
 		</HBox>
 	</top>
 	
@@ -25,9 +25,9 @@
 	
 	<bottom>
 		<HBox id = "bottomPane">
-			<Button styleClass = "functionButton" text = "recover" HBox.hgrow = "ALWAYS"/>
-			<Button styleClass = "functionButton" text = "create" HBox.hgrow = "ALWAYS"/>
-			<Button styleClass = "functionButton" text = "export" HBox.hgrow = "ALWAYS"/>
+			<Button fx:id = "importButton" styleClass = "functionButton" text = "import" HBox.hgrow = "ALWAYS"/>
+			<Button fx:id = "createButton" styleClass = "functionButton" text = "create" HBox.hgrow = "ALWAYS"/>
+			<Button fx:id = "exportButton" styleClass = "functionButton" text = "export" HBox.hgrow = "ALWAYS"/>
 		</HBox>
 	</bottom>
 	

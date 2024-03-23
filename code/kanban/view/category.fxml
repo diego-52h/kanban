@@ -9,12 +9,12 @@
 <?import kanban.controller.TaskItem?>
 
 <fx:root id = "category" type = "javafx.scene.layout.VBox" xmlns:fx = "http://javafx.com/fxml">
-	<Label id = "title" text = "Category"/>
+	<Label fx:id = "title" id = "title"/>
 	
 	<Separator/>
 	
 	<ScrollPane VBox.vgrow = "ALWAYS">
-		<VBox id = "list">
+		<VBox fx:id = "tasks" id = "tasks">
 			<TaskItem/>
 			<TaskItem/>
 			<TaskItem/>

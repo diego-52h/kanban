@@ -1,16 +1,21 @@
 #task
 {
-	-fx-background-color: #367CB3;
+	-fx-font-size: 14;
+	
 	-fx-background-radius: 6;
+	-fx-background-color: #5597CC;
 	
 	-fx-min-height: 45;
 	-fx-max-height: 45;
 	
 	-fx-min-width: 100;
 	-fx-max-width: Infinity;
+	
+	-fx-alignment: center;
+	-fx-text-alignment: center;
 }
 
 #task:hover
 {
-	-fx-background-color: derive(#367CB3, 20%);
+	-fx-background-color: derive(#5597CC, 20%);
 }

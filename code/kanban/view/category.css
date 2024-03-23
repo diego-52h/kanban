@@ -1,0 +1,55 @@
+#category
+{
+	-fx-border-width: 1;
+	-fx-border-color: #D8D8D8;
+	-fx-border-radius: 10;
+	
+	-fx-background-color: #FFFFFF;
+	-fx-background-radius: 10;
+	
+	-fx-padding: 25;
+	-fx-spacing: 20;
+	
+	-fx-alignment: top-center;
+}
+
+#title
+{
+	-fx-font-size: 20;
+	
+	-fx-min-height: 45;
+	-fx-max-height: 45;
+	
+	-fx-alignment: center;
+	-fx-text-alignment: center;
+}
+
+#list
+{
+	-fx-padding: 5;
+	-fx-spacing: 15;
+	
+	-fx-alignment: top-center;
+}
+
+.separator .line
+{
+	-fx-border-width: 2;
+	-fx-border-style: solid;
+}
+
+.scroll-pane
+{
+	-fx-background-color: transparent;
+	
+	-fx-fit-to-width: true;
+	-fx-fit-to-height: false;
+	
+	-fx-hbar-policy: never;
+	-fx-vbar-policy: never;
+}
+
+.scroll-pane > .viewport
+{
+	-fx-background-color: transparent;
+}

@@ -2,12 +2,12 @@ package kanban;
 
 import javafx.application.Application;
 
-import javafx.fxml.FXMLLoader;
-
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import javafx.stage.Stage;
+
+import kanban.controller.BoardItem;
 
 public class App extends Application
 {
@@ -17,19 +17,9 @@ public class App extends Application
 	@Override
 	public void start(Stage stage)
 	{
-		Parent root = null;
+		Parent root = new BoardItem();
 		
-		try
-		{
-			root = FXMLLoader.load(App.class.getResource("/view.fxml"));
-		}
-		
-		catch(Exception exception)
-		{
-			System.out.println(exception.toString());
-			
-			return;
-		}
+		root.getStylesheets().add(App.class.getResource("/common.css").toString());
 		
 		Scene scene = new Scene(root, this.SIZE_X, this.SIZE_Y);
 		
@@ -43,6 +33,18 @@ public class App extends Application
 	
 	public static void main(String args[])
 	{
-		launch(args);
+		try
+		{
+			launch(args);
+		}
+		
+		catch(Exception exception)
+		{
+			System.err.println(exception);
+			
+			exception.printStackTrace();
+			
+			return;
+		}
 	}
 }

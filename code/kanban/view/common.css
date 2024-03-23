@@ -1,0 +1,45 @@
+.root
+{
+	-fx-font: 12 "system";
+}
+
+.context-menu
+{
+	-fx-border-width: 1;
+	-fx-border-color: #D8D8D8;
+	-fx-border-radius: 6;
+	
+	-fx-background-color: #F0EEF5;
+	-fx-background-radius: 6;
+	
+	-fx-min-width: 150;
+	-fx-max-width: 150;
+	
+	-fx-padding: 10;
+}
+
+.menu-item
+{
+	-fx-font-size: 16;
+	
+	-fx-min-height: 25;
+	-fx-max-height: 25;
+	
+	-fx-padding: 8;
+}
+
+.menu-item .label
+{
+	-fx-text-fill: #89909C;
+}
+
+.menu-item:focused
+{
+	-fx-background-color: #E4E3EF;
+	-fx-background-radius: 5;
+}
+
+.menu-item:focused .label
+{
+	-fx-text-fill: #424652;
+}

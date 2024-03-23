@@ -1,0 +1,32 @@
+<?import java.net.URL?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+
+<?import javafx.scene.layout.VBox?>
+
+<?import kanban.controller.TaskItem?>
+
+<fx:root id = "category" type = "javafx.scene.layout.VBox" xmlns:fx = "http://javafx.com/fxml">
+	<Label id = "title" text = "Category"/>
+	
+	<Separator/>
+	
+	<ScrollPane VBox.vgrow = "ALWAYS">
+		<VBox id = "list">
+			<TaskItem/>
+			<TaskItem/>
+			<TaskItem/>
+			<TaskItem/>
+			<TaskItem/>
+			<TaskItem/>
+			<TaskItem/>
+			<TaskItem/>
+		</VBox>
+	</ScrollPane>
+	
+	<stylesheets>
+		<URL value = "@category.css"/>
+	</stylesheets>
+</fx:root>

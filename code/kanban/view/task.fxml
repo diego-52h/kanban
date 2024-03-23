@@ -1,0 +1,20 @@
+<?import java.net.URL?>
+
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+
+<fx:root id = "task" type = "javafx.scene.control.Label" xmlns:fx = "http://javafx.com/fxml">
+	<contextMenu>
+		<ContextMenu>
+			<items>
+				<MenuItem text = "edit"/>
+				<MenuItem text = "remove"/>
+			</items>
+		</ContextMenu>
+	</contextMenu>
+	
+	<stylesheets>
+		<URL value = "@task.css"/>
+	</stylesheets>
+</fx:root>

@@ -1,0 +1,16 @@
+#task
+{
+	-fx-background-color: #367CB3;
+	-fx-background-radius: 6;
+	
+	-fx-min-height: 45;
+	-fx-max-height: 45;
+	
+	-fx-min-width: 100;
+	-fx-max-width: Infinity;
+}
+
+#task:hover
+{
+	-fx-background-color: derive(#367CB3, 20%);
+}

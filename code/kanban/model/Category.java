@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
-public class TaskList
+public class Category
 {
 	private String name;
 	private Set<Task> tasks;
 	
-	public TaskList(String name)
+	public Category(String name)
 	{
 		this.name = name;
 		

@@ -1,4 +1,4 @@
-package kanban.ui;
+package kanban;
 
 import javafx.application.Application;
 
@@ -26,7 +26,7 @@ public class App extends Application
 		
 		catch(Exception exception)
 		{
-			System.out.println(exception.getMessage());
+			System.out.println(exception.toString());
 			
 			return;
 		}

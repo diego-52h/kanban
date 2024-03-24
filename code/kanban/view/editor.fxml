@@ -34,7 +34,7 @@
 			</columnConstraints>
 			
 			<Label text = "Name:" styleClass = "formComponent" GridPane.rowIndex = "0" GridPane.columnIndex = "0" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
-			<TextField promptText = "name" styleClass = "formComponent" GridPane.rowIndex = "0" GridPane.columnIndex = "1" GridPane.rowSpan = "1" GridPane.columnSpan = "2"/>
+			<TextField fx:id = "newTaskName" promptText = "name" styleClass = "formComponent" GridPane.rowIndex = "0" GridPane.columnIndex = "1" GridPane.rowSpan = "1" GridPane.columnSpan = "2"/>
 			
 			<Separator GridPane.rowIndex = "1" GridPane.columnIndex = "0" GridPane.rowSpan = "1" GridPane.columnSpan = "3"/>
 			

@@ -70,7 +70,11 @@ public class Board extends BorderPane
 	
 	private void createTask()
 	{
-		System.out.println("create button");
+		Task task = new Task("");
+		
+		EditWindow.launch(task, this.getScene().getWindow());
+		
+		this.tasksToDo.insertTask(task);
 	}
 	
 	private void importState()

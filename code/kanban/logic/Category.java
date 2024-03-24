@@ -30,10 +30,6 @@ public class Category extends VBox
 			
 			this.name.setText(title);
 			
-			this.insertTask(new Task("task 1"));
-			this.insertTask(new Task("task 2"));
-			this.insertTask(new Task("task 3"));
-			
 			this.setOnDragOver((DragEvent event) -> {
 				event.acceptTransferModes(TransferMode.MOVE);
 				event.consume();

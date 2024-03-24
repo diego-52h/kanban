@@ -14,15 +14,19 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 
+import javafx.beans.property.SimpleObjectProperty;
+
 import kanban.logic.Category;
+import kanban.logic.EditWindow;
 
 public class Task extends Label
 {
 	private @FXML MenuItem modify;
 	private @FXML MenuItem remove;
 	
-	private String name;
 	private Category category;
+	
+	private SimpleObjectProperty<String> name;
 	
 	public Task(String name)
 	{
@@ -35,7 +39,7 @@ public class Task extends Label
 		{
 			loader.load();
 			
-			this.setText(name);
+			this.name = new SimpleObjectProperty();
 			
 			this.modify.setOnAction((ActionEvent event) -> { this.modify(); event.consume(); });
 			this.remove.setOnAction((ActionEvent event) -> { this.remove(); event.consume(); });
@@ -49,6 +53,10 @@ public class Task extends Label
 				
 				event.consume();
 			});
+			
+			this.name.addListener((element, prev, curr) -> { this.setText(curr); });
+			
+			this.name.setValue(name);
 		}
 		
 		catch(Exception exception)
@@ -59,19 +67,15 @@ public class Task extends Label
 		}
 	}
 	
-	public void setCategory(Category category)
-	{
-		this.category = category;
-	}
+	public void setCategory(Category category) { this.category = category; }
 	
-	public Category getCategory()
-	{
-		return this.category;
-	}
+	public void setName(String name) { this.name.setValue(name); }
+	
+	public String getName() { return this.name.getValue(); }
 	
 	private void modify()
 	{
-		System.out.println("modify task");
+		EditWindow.launch(this, this.getScene().getWindow());
 	}
 	
 	private void remove()

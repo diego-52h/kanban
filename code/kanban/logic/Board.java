@@ -1,4 +1,4 @@
-package kanban.controller;
+package kanban.logic;
 
 import javafx.event.ActionEvent;
 
@@ -12,9 +12,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 
-import kanban.controller.CategoryItem;
+import kanban.logic.Category;
 
-public class BoardItem extends BorderPane
+public class Board extends BorderPane
 {
 	private @FXML Label name;
 	
@@ -24,11 +24,11 @@ public class BoardItem extends BorderPane
 	private @FXML Button createButton;
 	private @FXML Button exportButton;
 	
-	private CategoryItem tasksToDo;
-	private CategoryItem tasksOnIt;
-	private CategoryItem tasksDone;
+	private Category tasksToDo;
+	private Category tasksOnIt;
+	private Category tasksDone;
 	
-	public BoardItem(String title)
+	public Board(String title)
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/board.fxml"));
 		
@@ -41,9 +41,9 @@ public class BoardItem extends BorderPane
 			
 			this.name.setText(title);
 			
-			this.tasksToDo = new CategoryItem("To Do");
-			this.tasksOnIt = new CategoryItem("On It");
-			this.tasksDone = new CategoryItem("Done");
+			this.tasksToDo = new Category("To Do");
+			this.tasksOnIt = new Category("On It");
+			this.tasksDone = new Category("Done");
 			
 			this.addCategory(tasksToDo);
 			this.addCategory(tasksOnIt);
@@ -62,7 +62,7 @@ public class BoardItem extends BorderPane
 		}
 	}
 	
-	private void addCategory(CategoryItem category)
+	private void addCategory(Category category)
 	{
 		this.categories.getChildren().add(category);
 		this.categories.setHgrow(category, Priority.ALWAYS);

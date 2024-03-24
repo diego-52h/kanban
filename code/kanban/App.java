@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 
 import javafx.stage.Stage;
 
-import kanban.controller.BoardItem;
+import kanban.logic.Board;
 
 public class App extends Application
 {
@@ -17,7 +17,7 @@ public class App extends Application
 	@Override
 	public void start(Stage stage)
 	{
-		Parent root = new BoardItem("Kanban Board");
+		Parent root = new Board("Kanban Board");
 		
 		root.getStylesheets().add(App.class.getResource("/common.css").toString());
 		

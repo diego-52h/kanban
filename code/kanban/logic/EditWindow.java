@@ -1,4 +1,4 @@
-package kanban.controller;
+package kanban.logic;
 
 import javafx.event.ActionEvent;
 
@@ -7,9 +7,11 @@ import javafx.fxml.FXMLLoader;
 
 import javafx.scene.layout.BorderPane;
 
-public class EditorItem extends BorderPane
+import kanban.logic.Task;
+
+public class EditWindow extends BorderPane
 {
-	public EditorItem()
+	public EditWindow(Task task)
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/editor.fxml"));
 		

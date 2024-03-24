@@ -1,4 +1,4 @@
-package kanban.controller;
+package kanban.logic;
 
 import javafx.event.ActionEvent;
 
@@ -14,17 +14,17 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 
-import kanban.controller.CategoryItem;
+import kanban.logic.Category;
 
-public class TaskItem extends Label
+public class Task extends Label
 {
 	private @FXML MenuItem modify;
 	private @FXML MenuItem remove;
 	
 	private String name;
-	private CategoryItem category;
+	private Category category;
 	
-	public TaskItem(String name)
+	public Task(String name)
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/task.fxml"));
 		
@@ -59,12 +59,12 @@ public class TaskItem extends Label
 		}
 	}
 	
-	public void setCategory(CategoryItem category)
+	public void setCategory(Category category)
 	{
 		this.category = category;
 	}
 	
-	public CategoryItem getCategory()
+	public Category getCategory()
 	{
 		return this.category;
 	}

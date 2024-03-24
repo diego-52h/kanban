@@ -75,7 +75,7 @@ public class TaskItem extends Label
 		
 		catch(Exception exception)
 		{
-			System.err.println(exception.toString());
+			exception.printStackTrace();
 			
 			return;
 		}

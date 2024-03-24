@@ -3,7 +3,7 @@
 	-fx-font: 12 "system";
 }
 
-.button
+.button, .toggle-button
 {
 	-fx-border-width: 1;
 	-fx-border-color: #CDCDCD;
@@ -15,14 +15,14 @@
 	-fx-focus-traversable: false;
 }
 
-.button:hover
+.button:hover, .toggle-button:hover
 {
 	-fx-border-color: #D7D7D7;
 	
 	-fx-background-color: #EBEBEB;
 }
 
-.button:armed
+.button:armed, .toggle-button:armed, .toggle-button:selected
 {
 	-fx-border-color: #C9C9C9;
 	

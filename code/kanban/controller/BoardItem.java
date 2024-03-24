@@ -46,7 +46,7 @@ public class BoardItem extends BorderPane
 		
 		catch(Exception exception)
 		{
-			System.err.println(exception.toString());
+			exception.printStackTrace();
 			
 			return;
 		}

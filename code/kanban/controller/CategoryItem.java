@@ -56,7 +56,7 @@ public class CategoryItem extends VBox
 		
 		catch(Exception exception)
 		{
-			System.err.println(exception.toString());
+			exception.printStackTrace();
 			
 			return;
 		}

@@ -1,0 +1,53 @@
+#editor
+{
+	-fx-padding: 20;
+}
+
+#form
+{
+	-fx-border-width: 2;
+	-fx-border-color: #D8D8D8;
+	-fx-border-radius: 8;
+	
+	-fx-background-color: #F2F2F2;
+	-fx-background-radius: 8;
+	
+	-fx-hgap: 10;
+	-fx-vgap: 10;
+	
+	-fx-padding: 10;
+	
+	-fx-alignment: center;
+}
+
+.formComponent
+{
+	-fx-font-size: 12;
+	
+	-fx-min-height: 30;
+	-fx-max-height: 30;
+	
+	-fx-min-width: 50;
+	-fx-max-width: Infinity;
+	
+	-fx-focus-traversable: false;
+}
+
+#bottomPane
+{
+	-fx-padding: 15 0 0 0;
+	-fx-spacing: 20;
+	
+	-fx-alignment: center;
+}
+
+.functionButton
+{
+	-fx-font-size: 12;
+	
+	-fx-min-height: 35;
+	-fx-max-height: 35;
+	
+	-fx-min-width: 100;
+	-fx-max-width: Infinity;
+}

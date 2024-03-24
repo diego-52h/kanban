@@ -15,7 +15,7 @@ import kanban.controller.TaskItem;
 public class CategoryItem extends VBox
 {
 	private @FXML VBox tasks;
-	private @FXML Label title;
+	private @FXML Label name;
 	
 	public CategoryItem(String title)
 	{
@@ -28,7 +28,7 @@ public class CategoryItem extends VBox
 		{
 			loader.load();
 			
-			this.title.setText(title);
+			this.name.setText(title);
 			
 			this.insertTask(new TaskItem("task 1"));
 			this.insertTask(new TaskItem("task 2"));
@@ -62,7 +62,7 @@ public class CategoryItem extends VBox
 		
 		catch(Exception exception)
 		{
-			System.err.println(exception.toString());
+			exception.printStackTrace();
 			
 			return;
 		}

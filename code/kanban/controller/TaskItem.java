@@ -18,6 +18,7 @@ import kanban.controller.CategoryItem;
 
 public class TaskItem extends Label
 {
+	private @FXML MenuItem modify;
 	private @FXML MenuItem remove;
 	
 	private String name;
@@ -36,7 +37,8 @@ public class TaskItem extends Label
 			
 			this.setText(name);
 			
-			this.remove.setOnAction((ActionEvent event) -> { this.erase(); event.consume(); });
+			this.modify.setOnAction((ActionEvent event) -> { this.modify(); event.consume(); });
+			this.remove.setOnAction((ActionEvent event) -> { this.remove(); event.consume(); });
 			
 			this.setOnDragDetected((MouseEvent event) -> {
 				Dragboard dragger = this.startDragAndDrop(TransferMode.MOVE);
@@ -51,7 +53,7 @@ public class TaskItem extends Label
 		
 		catch(Exception exception)
 		{
-			System.err.println(exception.toString());
+			exception.printStackTrace();
 			
 			return;
 		}
@@ -67,7 +69,12 @@ public class TaskItem extends Label
 		return this.category;
 	}
 	
-	private void erase()
+	private void modify()
+	{
+		System.out.println("modify task");
+	}
+	
+	private void remove()
 	{
 		this.category.removeTask(this);
 	}

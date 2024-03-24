@@ -16,7 +16,7 @@ import kanban.controller.CategoryItem;
 
 public class BoardItem extends BorderPane
 {
-	private @FXML Label title;
+	private @FXML Label name;
 	
 	private @FXML HBox categories;
 	
@@ -39,7 +39,7 @@ public class BoardItem extends BorderPane
 		{
 			loader.load();
 			
-			this.title.setText(title);
+			this.name.setText(title);
 			
 			this.tasksToDo = new CategoryItem("To Do");
 			this.tasksOnIt = new CategoryItem("On It");
@@ -56,7 +56,7 @@ public class BoardItem extends BorderPane
 		
 		catch(Exception exception)
 		{
-			System.err.println(exception.toString());
+			exception.printStackTrace();
 			
 			return;
 		}

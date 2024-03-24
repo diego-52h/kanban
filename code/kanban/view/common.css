@@ -3,6 +3,32 @@
 	-fx-font: 12 "system";
 }
 
+.button, .toggle-button
+{
+	-fx-border-width: 1;
+	-fx-border-color: #CDCDCD;
+	-fx-border-radius: 4;
+	
+	-fx-background-color: #E6E6E6;
+	-fx-background-radius: 4;
+	
+	-fx-focus-traversable: false;
+}
+
+.button:hover, .toggle-button:hover
+{
+	-fx-border-color: #D7D7D7;
+	
+	-fx-background-color: #EBEBEB;
+}
+
+.button:armed, .toggle-button:armed, .toggle-button:selected
+{
+	-fx-border-color: #C9C9C9;
+	
+	-fx-background-color: #E1E1E1;
+}
+
 .context-menu
 {
 	-fx-border-width: 1;

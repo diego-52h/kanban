@@ -30,9 +30,9 @@ public class CategoryItem extends VBox
 			
 			this.title.setText(title);
 			
-			this.insertTask(new TaskItem("task"));
-			this.insertTask(new TaskItem("task"));
-			this.insertTask(new TaskItem("task"));
+			this.insertTask(new TaskItem("task 1"));
+			this.insertTask(new TaskItem("task 2"));
+			this.insertTask(new TaskItem("task 3"));
 			
 			this.setOnDragOver((DragEvent event) -> {
 				event.acceptTransferModes(TransferMode.MOVE);
@@ -56,17 +56,8 @@ public class CategoryItem extends VBox
 				event.consume();
 			});
 			
-			this.setOnDragEntered((DragEvent event) -> {
-				this.setFocused(true);
-				
-				event.consume();
-			});
-			
-			this.setOnDragExited((DragEvent event) -> {
-				this.setFocused(false);
-				
-				event.consume();
-			});
+			this.setOnDragEntered((DragEvent event) -> { this.setFocused(true); event.consume(); });
+			this.setOnDragExited((DragEvent event) -> { this.setFocused(false); event.consume(); });
 		}
 		
 		catch(Exception exception)

@@ -36,20 +36,14 @@ public class TaskItem extends Label
 			
 			this.setText(name);
 			
+			this.remove.setOnAction((ActionEvent event) -> { this.erase(); event.consume(); });
+			
 			this.setOnDragDetected((MouseEvent event) -> {
 				Dragboard dragger = this.startDragAndDrop(TransferMode.MOVE);
-				{
-					ClipboardContent content = new ClipboardContent();
-					
-					content.putString("");
-					dragger.setContent(content);
-				}
+				ClipboardContent content = new ClipboardContent();
 				
-				event.consume();
-			});
-			
-			this.remove.setOnAction((ActionEvent event) -> {
-				this.category.removeTask(this);
+				content.putString("");
+				dragger.setContent(content);
 				
 				event.consume();
 			});
@@ -71,5 +65,10 @@ public class TaskItem extends Label
 	public CategoryItem getCategory()
 	{
 		return this.category;
+	}
+	
+	private void erase()
+	{
+		this.category.removeTask(this);
 	}
 }

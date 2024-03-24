@@ -49,17 +49,9 @@ public class BoardItem extends BorderPane
 			this.addCategory(tasksOnIt);
 			this.addCategory(tasksDone);
 			
-			this.importButton.setOnAction((ActionEvent event) -> {
-				System.out.println("import button");
-			});
-			
-			this.createButton.setOnAction((ActionEvent event) -> {
-				System.out.println("create button");
-			});
-			
-			this.exportButton.setOnAction((ActionEvent event) -> {
-				System.out.println("export button");
-			});
+			this.createButton.setOnAction((ActionEvent event) -> { this.createTask(); event.consume(); });
+			this.importButton.setOnAction((ActionEvent event) -> { this.importState(); event.consume(); });
+			this.exportButton.setOnAction((ActionEvent event) -> { this.exportState(); event.consume(); });
 		}
 		
 		catch(Exception exception)
@@ -74,5 +66,20 @@ public class BoardItem extends BorderPane
 	{
 		this.categories.getChildren().add(category);
 		this.categories.setHgrow(category, Priority.ALWAYS);
+	}
+	
+	private void createTask()
+	{
+		System.out.println("create button");
+	}
+	
+	private void importState()
+	{
+		System.out.println("import button");
+	}
+	
+	private void exportState()
+	{
+		System.out.println("export button");
 	}
 }

@@ -14,11 +14,16 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 
+import kanban.controller.CategoryItem;
+
 public class TaskItem extends Label
 {
 	private @FXML MenuItem remove;
 	
-	public TaskItem()
+	private String name;
+	private CategoryItem category;
+	
+	public TaskItem(String name)
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/task.fxml"));
 		
@@ -29,7 +34,7 @@ public class TaskItem extends Label
 		{
 			loader.load();
 			
-			this.setText("task");
+			this.setText(name);
 			
 			this.setOnDragDetected((MouseEvent event) -> {
 				Dragboard dragger = this.startDragAndDrop(TransferMode.MOVE);
@@ -43,24 +48,8 @@ public class TaskItem extends Label
 				event.consume();
 			});
 			
-			this.setOnDragDone((DragEvent event) -> {
-				switch(event.getTransferMode())
-				{
-					case TransferMode.MOVE:
-					{
-						System.out.println("task move done");
-					} break;
-					
-					default:
-					{
-					}
-				}
-				
-				event.consume();
-			});
-			
 			this.remove.setOnAction((ActionEvent event) -> {
-				System.out.println("remove task");
+				this.category.removeTask(this);
 				
 				event.consume();
 			});
@@ -72,5 +61,15 @@ public class TaskItem extends Label
 			
 			return;
 		}
+	}
+	
+	public void setCategory(CategoryItem category)
+	{
+		this.category = category;
+	}
+	
+	public CategoryItem getCategory()
+	{
+		return this.category;
 	}
 }

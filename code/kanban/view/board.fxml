@@ -16,11 +16,7 @@
 	</top>
 	
 	<center>
-		<HBox id = "mainPane">
-			<CategoryItem HBox.hgrow = "ALWAYS"/>
-			<CategoryItem HBox.hgrow = "ALWAYS"/>
-			<CategoryItem HBox.hgrow = "ALWAYS"/>
-		</HBox>
+		<HBox fx:id = "categories" id = "mainPane"/>
 	</center>
 	
 	<bottom>

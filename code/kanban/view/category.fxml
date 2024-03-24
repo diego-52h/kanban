@@ -14,16 +14,7 @@
 	<Separator/>
 	
 	<ScrollPane VBox.vgrow = "ALWAYS">
-		<VBox fx:id = "tasks" id = "tasks">
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-		</VBox>
+		<VBox fx:id = "tasks" id = "tasks"/>
 	</ScrollPane>
 	
 	<stylesheets>

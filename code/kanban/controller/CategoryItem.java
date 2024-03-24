@@ -10,12 +10,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
 
+import kanban.controller.TaskItem;
+
 public class CategoryItem extends VBox
 {
 	private @FXML VBox tasks;
 	private @FXML Label title;
 	
-	public CategoryItem()
+	public CategoryItem(String title)
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/category.fxml"));
 		
@@ -26,16 +28,29 @@ public class CategoryItem extends VBox
 		{
 			loader.load();
 			
-			this.title.setText("category");
+			this.title.setText(title);
+			
+			this.insertTask(new TaskItem("task"));
+			this.insertTask(new TaskItem("task"));
+			this.insertTask(new TaskItem("task"));
 			
 			this.setOnDragOver((DragEvent event) -> {
 				event.acceptTransferModes(TransferMode.MOVE);
-				
 				event.consume();
 			});
 			
 			this.setOnDragDropped((DragEvent event) -> {
-				System.out.println("dropped item: " + ((TaskItem) event.getGestureSource()).getText());
+				try
+				{
+					TaskItem task = ((TaskItem) event.getGestureSource());
+					
+					this.insertTask(task);
+				}
+				
+				catch(ClassCastException exception)
+				{
+					System.err.println(exception);
+				}
 				
 				event.setDropCompleted(true);
 				event.consume();
@@ -60,5 +75,19 @@ public class CategoryItem extends VBox
 			
 			return;
 		}
+	}
+	
+	public void insertTask(TaskItem task)
+	{
+		task.setCategory(this);
+		
+		this.tasks.getChildren().add(task);
+	}
+	
+	public void removeTask(TaskItem task)
+	{
+		task.setCategory(null);
+		
+		this.tasks.getChildren().remove(task);
 	}
 }

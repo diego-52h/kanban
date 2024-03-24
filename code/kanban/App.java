@@ -17,7 +17,7 @@ public class App extends Application
 	@Override
 	public void start(Stage stage)
 	{
-		Parent root = new BoardItem();
+		Parent root = new BoardItem("Kanban Board");
 		
 		root.getStylesheets().add(App.class.getResource("/common.css").toString());
 		

@@ -6,8 +6,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<?import kanban.controller.CategoryItem?>
-
 <fx:root id = "board" type = "javafx.scene.layout.BorderPane" xmlns:fx = "http://javafx.com/fxml">
 	<top>
 		<HBox id = "topPane">

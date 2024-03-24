@@ -51,6 +51,13 @@
 {
 	-fx-font-size: 14;
 	
+	-fx-border-width: 1;
+	-fx-border-color: #CDCDCD;
+	-fx-border-radius: 4;
+	
+	-fx-background-color: #E6E6E6;
+	-fx-background-radius: 4;
+	
 	-fx-min-height: 40;
 	-fx-max-height: 40;
 	
@@ -58,4 +65,11 @@
 	-fx-max-width: Infinity;
 	
 	-fx-focus-traversable: false;
+}
+
+.functionButton:hover
+{
+	-fx-border-color: #D7D7D7;
+	
+	-fx-background-color: #EBEBEB;
 }

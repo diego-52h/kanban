@@ -3,7 +3,7 @@
 	-fx-font-size: 14;
 	
 	-fx-background-radius: 6;
-	-fx-background-color: #5597CC;
+	-fx-background-color: #FEBF91; /* #89BAFF #81DDB6 #FEBF91 #BCB1F4 #EE9ECF #F8DC7E */
 	
 	-fx-min-height: 45;
 	-fx-max-height: 45;
@@ -17,5 +17,5 @@
 
 #task:hover
 {
-	-fx-background-color: derive(#5597CC, 20%);
+	-fx-background-color: derive(#FEBF91, 20%);
 }

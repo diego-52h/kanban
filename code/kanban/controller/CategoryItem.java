@@ -13,7 +13,7 @@ import javafx.scene.input.TransferMode;
 public class CategoryItem extends VBox
 {
 	private @FXML VBox tasks;
-	private @FXML Label title;
+	private @FXML Label name;
 	
 	public CategoryItem()
 	{
@@ -26,7 +26,7 @@ public class CategoryItem extends VBox
 		{
 			loader.load();
 			
-			this.title.setText("category");
+			this.name.setText("category");
 			
 			this.setOnDragOver((DragEvent event) -> {
 				event.acceptTransferModes(TransferMode.MOVE);

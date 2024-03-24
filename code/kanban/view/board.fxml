@@ -11,7 +11,7 @@
 <fx:root id = "board" type = "javafx.scene.layout.BorderPane" xmlns:fx = "http://javafx.com/fxml">
 	<top>
 		<HBox id = "topPane">
-			<Label fx:id = "title" id = "title" HBox.hgrow = "ALWAYS"/>
+			<Label fx:id = "name" id = "name" HBox.hgrow = "ALWAYS"/>
 		</HBox>
 	</top>
 	

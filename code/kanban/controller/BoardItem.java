@@ -12,7 +12,7 @@ import javafx.scene.layout.BorderPane;
 
 public class BoardItem extends BorderPane
 {
-	private @FXML Label title;
+	private @FXML Label name;
 	
 	private @FXML Button importButton;
 	private @FXML Button createButton;
@@ -29,7 +29,7 @@ public class BoardItem extends BorderPane
 		{
 			loader.load();
 			
-			this.title.setText("board");
+			this.name.setText("board");
 			
 			this.importButton.setOnAction((ActionEvent event) -> {
 				System.out.println("import button");

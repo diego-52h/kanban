@@ -8,6 +8,7 @@
 	<contextMenu>
 		<ContextMenu>
 			<items>
+				<MenuItem fx:id = "modify" text = "modify"/>
 				<MenuItem fx:id = "remove" text = "remove"/>
 			</items>
 		</ContextMenu>

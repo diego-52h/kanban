@@ -16,6 +16,7 @@ import javafx.scene.input.TransferMode;
 
 public class TaskItem extends Label
 {
+	private @FXML MenuItem modify;
 	private @FXML MenuItem remove;
 	
 	public TaskItem()
@@ -55,6 +56,12 @@ public class TaskItem extends Label
 					{
 					}
 				}
+				
+				event.consume();
+			});
+			
+			this.modify.setOnAction((ActionEvent event) -> {
+				System.out.println("modify task");
 				
 				event.consume();
 			});

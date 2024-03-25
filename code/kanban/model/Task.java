@@ -7,7 +7,7 @@ public class Task
 	private String name;
 	private String data;
 	
-	private String color;
+	private String color; // Hex code
 	
 	private State state;
 	
@@ -21,8 +21,8 @@ public class Task
 	}
 	
 	public String getName() { return this.name; }
-	public String getData() { return this.name; }
-	public String getColor() { return this.name; }
+	public String getData() { return this.data; }
+	public String getColor() { return this.color; }
 	
 	public State getState() { return this.state; }
 	

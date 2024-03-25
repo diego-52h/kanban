@@ -13,6 +13,8 @@ import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 
+import kanban.controller.EditorWindow;
+
 public class TaskNode extends Label
 {
 	private @FXML MenuItem modifyButton;
@@ -53,7 +55,7 @@ public class TaskNode extends Label
 	
 	private void modify()
 	{
-		System.out.println("modify");
+		EditorWindow.launch(this.getScene().getWindow());
 	}
 	
 	private void remove()

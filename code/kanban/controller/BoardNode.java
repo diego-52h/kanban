@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 
 import javafx.scene.layout.BorderPane;
 
+import kanban.controller.EditorWindow;
+
 public class BoardNode extends BorderPane
 {
 	private @FXML Label name;
@@ -44,7 +46,7 @@ public class BoardNode extends BorderPane
 	
 	private void createNew()
 	{
-		System.out.println("create new");
+		EditorWindow.launch(this.getScene().getWindow());
 	}
 	
 	private void importState()

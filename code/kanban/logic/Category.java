@@ -31,7 +31,19 @@ public class Category extends VBox
 			this.name.setText(title);
 			
 			this.setOnDragOver((DragEvent event) -> {
-				event.acceptTransferModes(TransferMode.MOVE);
+				try
+				{
+					Category sourceCategory = ((Task) event.getGestureSource()).getCategory();
+					
+					if(sourceCategory != this)
+						event.acceptTransferModes(TransferMode.MOVE);
+				}
+				
+				catch(ClassCastException exception)
+				{
+					System.err.println(exception);
+				}
+				
 				event.consume();
 			});
 			

@@ -76,13 +76,15 @@ public class Task extends Label
 		}
 	}
 	
-	public void setCategory(Category category) { this.category = category; }
-	
 	public void setName(String name) { this.name.setValue(name); }
 	public void setColor(Color color) { this.color.setValue(color); }
 	
+	public void setCategory(Category category) { this.category = category; }
+	
 	public String getName() { return this.name.getValue(); }
 	public Color getColor() { return this.color.getValue(); }
+	
+	public Category getCategory() { return this.category; }
 	
 	private void modify()
 	{

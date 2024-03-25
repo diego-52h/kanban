@@ -55,6 +55,7 @@
 	</bottom>
 	
 	<stylesheets>
+		<URL value = "@common.css"/>
 		<URL value = "@editor.css"/>
 	</stylesheets>
 </fx:root>

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<?import kanban.controller.CategoryItem?>
+<?import kanban.controller.CategoryNode?>
 
 <fx:root id = "board" type = "javafx.scene.layout.BorderPane" xmlns:fx = "http://javafx.com/fxml">
 	<top>
@@ -17,9 +17,9 @@
 	
 	<center>
 		<HBox id = "mainPane">
-			<CategoryItem HBox.hgrow = "ALWAYS"/>
-			<CategoryItem HBox.hgrow = "ALWAYS"/>
-			<CategoryItem HBox.hgrow = "ALWAYS"/>
+			<CategoryNode HBox.hgrow = "ALWAYS"/>
+			<CategoryNode HBox.hgrow = "ALWAYS"/>
+			<CategoryNode HBox.hgrow = "ALWAYS"/>
 		</HBox>
 	</center>
 	

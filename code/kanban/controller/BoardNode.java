@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 
 import javafx.scene.layout.BorderPane;
 
-public class BoardItem extends BorderPane
+public class BoardNode extends BorderPane
 {
 	private @FXML Label name;
 	
@@ -18,7 +18,7 @@ public class BoardItem extends BorderPane
 	private @FXML Button createButton;
 	private @FXML Button exportButton;
 	
-	public BoardItem()
+	public BoardNode()
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/board.fxml"));
 		
@@ -47,8 +47,6 @@ public class BoardItem extends BorderPane
 		catch(Exception exception)
 		{
 			exception.printStackTrace();
-			
-			return;
 		}
 	}
 }

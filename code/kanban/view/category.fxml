@@ -6,7 +6,7 @@
 
 <?import javafx.scene.layout.VBox?>
 
-<?import kanban.controller.TaskItem?>
+<?import kanban.controller.TaskNode?>
 
 <fx:root id = "category" type = "javafx.scene.layout.VBox" xmlns:fx = "http://javafx.com/fxml">
 	<Label fx:id = "name" id = "name"/>
@@ -15,14 +15,14 @@
 	
 	<ScrollPane VBox.vgrow = "ALWAYS">
 		<VBox fx:id = "tasks" id = "tasks">
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
-			<TaskItem/>
+			<TaskNode/>
+			<TaskNode/>
+			<TaskNode/>
+			<TaskNode/>
+			<TaskNode/>
+			<TaskNode/>
+			<TaskNode/>
+			<TaskNode/>
 		</VBox>
 	</ScrollPane>
 	

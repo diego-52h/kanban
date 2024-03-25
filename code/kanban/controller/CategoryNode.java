@@ -10,12 +10,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
 
-public class CategoryItem extends VBox
+public class CategoryNode extends VBox
 {
 	private @FXML VBox tasks;
 	private @FXML Label name;
 	
-	public CategoryItem()
+	public CategoryNode()
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/category.fxml"));
 		
@@ -35,7 +35,7 @@ public class CategoryItem extends VBox
 			});
 			
 			this.setOnDragDropped((DragEvent event) -> {
-				System.out.println("dropped item: " + ((TaskItem) event.getGestureSource()).getText());
+				System.out.println("dropped item: " + ((TaskNode) event.getGestureSource()).getText());
 				
 				event.setDropCompleted(true);
 				event.consume();
@@ -57,8 +57,6 @@ public class CategoryItem extends VBox
 		catch(Exception exception)
 		{
 			exception.printStackTrace();
-			
-			return;
 		}
 	}
 }

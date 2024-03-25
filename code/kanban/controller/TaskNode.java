@@ -14,12 +14,12 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 
-public class TaskItem extends Label
+public class TaskNode extends Label
 {
 	private @FXML MenuItem modify;
 	private @FXML MenuItem remove;
 	
-	public TaskItem()
+	public TaskNode()
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/task.fxml"));
 		
@@ -76,8 +76,6 @@ public class TaskItem extends Label
 		catch(Exception exception)
 		{
 			exception.printStackTrace();
-			
-			return;
 		}
 	}
 }

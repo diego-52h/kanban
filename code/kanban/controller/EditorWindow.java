@@ -7,9 +7,9 @@ import javafx.fxml.FXMLLoader;
 
 import javafx.scene.layout.BorderPane;
 
-public class EditorItem extends BorderPane
+public class EditorWindow extends BorderPane
 {
-	public EditorItem()
+	public EditorWindow()
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/editor.fxml"));
 		
@@ -24,8 +24,6 @@ public class EditorItem extends BorderPane
 		catch(Exception exception)
 		{
 			exception.printStackTrace();
-			
-			return;
 		}
 	}
 }

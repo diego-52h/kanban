@@ -38,12 +38,12 @@
 			
 			<Separator GridPane.rowIndex = "1" GridPane.columnIndex = "0" GridPane.rowSpan = "1" GridPane.columnSpan = "3"/>
 			
-			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent" GridPane.rowIndex = "2" GridPane.columnIndex = "0" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
-			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent" GridPane.rowIndex = "2" GridPane.columnIndex = "1" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
-			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent" GridPane.rowIndex = "2" GridPane.columnIndex = "2" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
-			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent" GridPane.rowIndex = "3" GridPane.columnIndex = "0" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
-			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent" GridPane.rowIndex = "3" GridPane.columnIndex = "1" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
-			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent" GridPane.rowIndex = "3" GridPane.columnIndex = "2" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
+			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent, colorButton" GridPane.rowIndex = "2" GridPane.columnIndex = "0" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
+			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent, colorButton" GridPane.rowIndex = "2" GridPane.columnIndex = "1" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
+			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent, colorButton" GridPane.rowIndex = "2" GridPane.columnIndex = "2" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
+			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent, colorButton" GridPane.rowIndex = "3" GridPane.columnIndex = "0" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
+			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent, colorButton" GridPane.rowIndex = "3" GridPane.columnIndex = "1" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
+			<ToggleButton toggleGroup = "$colors" styleClass = "formComponent, colorButton" GridPane.rowIndex = "3" GridPane.columnIndex = "2" GridPane.rowSpan = "1" GridPane.columnSpan = "1"/>
 		</GridPane>
 	</center>
 	
@@ -55,6 +55,7 @@
 	</bottom>
 	
 	<stylesheets>
+		<URL value = "@common.css"/>
 		<URL value = "@editor.css"/>
 	</stylesheets>
 </fx:root>

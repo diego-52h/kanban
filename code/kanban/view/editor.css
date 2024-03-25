@@ -33,6 +33,11 @@
 	-fx-focus-traversable: false;
 }
 
+.colorButton
+{
+	-fx-border-width: 0;
+}
+
 #bottomPane
 {
 	-fx-padding: 15 0 0 0;

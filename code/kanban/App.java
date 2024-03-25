@@ -19,8 +19,6 @@ public class App extends Application
 	{
 		Parent root = new Board("Kanban Board");
 		
-		root.getStylesheets().add(App.class.getResource("/common.css").toString());
-		
 		Scene scene = new Scene(root, this.SIZE_X, this.SIZE_Y);
 		
 		stage.setScene(scene);

@@ -10,9 +10,17 @@ import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 
+import javafx.scene.input.MouseEvent;
+
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+
+import javafx.scene.paint.Color;
 
 import javafx.stage.Stage;
 import javafx.stage.Modality;
@@ -31,6 +39,15 @@ public class EditWindow extends BorderPane
 	
 	private Task task;
 	
+	private static final Color COLORS[] = {
+		Color.web("89BAFF"),
+		Color.web("81DDB6"),
+		Color.web("FEBF91"),
+		Color.web("BCB1F4"),
+		Color.web("EE9ECF"),
+		Color.web("F8DC7E"),
+	};
+	
 	public EditWindow(Task task)
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/editor.fxml"));
@@ -48,6 +65,13 @@ public class EditWindow extends BorderPane
 			
 			this.cancelButton.setOnAction((ActionEvent event) -> { this.cancelChanges(); event.consume(); });
 			this.acceptButton.setOnAction((ActionEvent event) -> { this.acceptChanges(); event.consume(); });
+			
+			for(int i = 0; i < this.COLORS.length; i++)
+			{
+				ToggleButton button = (ToggleButton) this.colors.getToggles().get(i);
+				
+				button.setUserData(this.COLORS[i]);
+			}
 		}
 		
 		catch(Exception exception)
@@ -61,8 +85,6 @@ public class EditWindow extends BorderPane
 	public static void launch(Task task, Window parentWindow)
 	{
 		Parent root = new EditWindow(task);
-		
-		root.getStylesheets().add(EditWindow.class.getResource("/common.css").toString());
 		
 		Stage stage = new Stage();
 		Scene scene = new Scene(root, 280, 240);
@@ -85,7 +107,12 @@ public class EditWindow extends BorderPane
 	
 	private void acceptChanges()
 	{
+		Toggle chosenButton = this.colors.getSelectedToggle();
+		
 		this.task.setName(this.newTaskName.getText());
+		
+		if(chosenButton != null)
+			this.task.setColor((Color) chosenButton.getUserData());
 		
 		((Stage) this.getScene().getWindow()).close();
 	}

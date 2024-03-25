@@ -12,6 +12,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 
+import javafx.scene.paint.Color;
+
 import kanban.logic.Category;
 
 public class Board extends BorderPane
@@ -70,7 +72,7 @@ public class Board extends BorderPane
 	
 	private void createTask()
 	{
-		Task task = new Task("");
+		Task task = new Task("", Color.BLACK);
 		
 		EditWindow.launch(task, this.getScene().getWindow());
 		

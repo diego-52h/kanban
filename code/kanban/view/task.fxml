@@ -15,6 +15,7 @@
 	</contextMenu>
 	
 	<stylesheets>
+		<URL value = "@common.css"/>
 		<URL value = "@task.css"/>
 	</stylesheets>
 </fx:root>

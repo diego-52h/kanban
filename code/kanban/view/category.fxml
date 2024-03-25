@@ -16,6 +16,7 @@
 	</ScrollPane>
 	
 	<stylesheets>
+		<URL value = "@common.css"/>
 		<URL value = "@category.css"/>
 	</stylesheets>
 </fx:root>

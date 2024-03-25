@@ -10,14 +10,13 @@ import javafx.scene.control.MenuItem;
 
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
-import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 
 public class TaskNode extends Label
 {
-	private @FXML MenuItem modify;
-	private @FXML MenuItem remove;
+	private @FXML MenuItem modifyButton;
+	private @FXML MenuItem removeButton;
 	
 	public TaskNode()
 	{
@@ -32,42 +31,15 @@ public class TaskNode extends Label
 			
 			this.setText("task");
 			
+			this.modifyButton.setOnAction((ActionEvent event) -> { this.modify(); event.consume(); });
+			this.removeButton.setOnAction((ActionEvent event) -> { this.remove(); event.consume(); });
+			
 			this.setOnDragDetected((MouseEvent event) -> {
 				Dragboard dragger = this.startDragAndDrop(TransferMode.MOVE);
-				{
-					ClipboardContent content = new ClipboardContent();
-					
-					content.putString("");
-					dragger.setContent(content);
-				}
+				ClipboardContent content = new ClipboardContent();
 				
-				event.consume();
-			});
-			
-			this.setOnDragDone((DragEvent event) -> {
-				switch(event.getTransferMode())
-				{
-					case TransferMode.MOVE:
-					{
-						System.out.println("task move done");
-					} break;
-					
-					default:
-					{
-					}
-				}
-				
-				event.consume();
-			});
-			
-			this.modify.setOnAction((ActionEvent event) -> {
-				System.out.println("modify task");
-				
-				event.consume();
-			});
-			
-			this.remove.setOnAction((ActionEvent event) -> {
-				System.out.println("remove task");
+				content.putString("");
+				dragger.setContent(content);
 				
 				event.consume();
 			});
@@ -77,5 +49,15 @@ public class TaskNode extends Label
 		{
 			exception.printStackTrace();
 		}
+	}
+	
+	private void modify()
+	{
+		System.out.println("modify");
+	}
+	
+	private void remove()
+	{
+		System.out.println("remove");
 	}
 }

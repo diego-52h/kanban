@@ -28,6 +28,9 @@ public class CategoryNode extends VBox
 			
 			this.name.setText("category");
 			
+			this.setOnDragExited((DragEvent event) -> { this.setFocused(false); event.consume(); });
+			this.setOnDragEntered((DragEvent event) -> { this.setFocused(true); event.consume(); });
+			
 			this.setOnDragOver((DragEvent event) -> {
 				event.acceptTransferModes(TransferMode.MOVE);
 				
@@ -38,18 +41,6 @@ public class CategoryNode extends VBox
 				System.out.println("dropped item: " + ((TaskNode) event.getGestureSource()).getText());
 				
 				event.setDropCompleted(true);
-				event.consume();
-			});
-			
-			this.setOnDragEntered((DragEvent event) -> {
-				this.setFocused(true);
-				
-				event.consume();
-			});
-			
-			this.setOnDragExited((DragEvent event) -> {
-				this.setFocused(false);
-				
 				event.consume();
 			});
 		}

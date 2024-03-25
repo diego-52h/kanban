@@ -14,8 +14,8 @@ public class BoardNode extends BorderPane
 {
 	private @FXML Label name;
 	
-	private @FXML Button importButton;
 	private @FXML Button createButton;
+	private @FXML Button importButton;
 	private @FXML Button exportButton;
 	
 	public BoardNode()
@@ -31,22 +31,29 @@ public class BoardNode extends BorderPane
 			
 			this.name.setText("board");
 			
-			this.importButton.setOnAction((ActionEvent event) -> {
-				System.out.println("import button");
-			});
-			
-			this.createButton.setOnAction((ActionEvent event) -> {
-				System.out.println("create button");
-			});
-			
-			this.exportButton.setOnAction((ActionEvent event) -> {
-				System.out.println("export button");
-			});
+			this.createButton.setOnAction((ActionEvent event) -> { this.createNew(); event.consume(); });
+			this.importButton.setOnAction((ActionEvent event) -> { this.importState(); event.consume(); });
+			this.exportButton.setOnAction((ActionEvent event) -> { this.exportState(); event.consume(); });
 		}
 		
 		catch(Exception exception)
 		{
 			exception.printStackTrace();
 		}
+	}
+	
+	private void createNew()
+	{
+		System.out.println("create new");
+	}
+	
+	private void importState()
+	{
+		System.out.println("import state");
+	}
+	
+	private void exportState()
+	{
+		System.out.println("export state");
 	}
 }

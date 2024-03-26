@@ -13,6 +13,11 @@ public class ObservableTask extends Task implements Observable
 {
 	private List<InvalidationListener> listeners = new ArrayList();
 	
+	public ObservableTask(Task task)
+	{
+		super(task.getName(), task.getData(), task.getColor(), task.getState());
+	}
+	
 	public ObservableTask(String name, String data, String color, State state)
 	{
 		super(name, data, color, state);

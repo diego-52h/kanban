@@ -1,7 +1,10 @@
 package kanban.controller;
 
+import java.io.File;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javafx.collections.FXCollections;
@@ -20,10 +23,14 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 
+import javafx.stage.FileChooser;
+
 import kanban.controller.CategoryNode;
 import kanban.controller.EditorWindow;
 
+import kanban.model.DBManager;
 import kanban.model.State;
+import kanban.model.Task;
 
 public class BoardNode extends BorderPane
 {
@@ -103,12 +110,34 @@ public class BoardNode extends BorderPane
 	
 	private void importState()
 	{
-		System.out.println("import state");
+		FileChooser chooser = new FileChooser();
+		File file = chooser.showOpenDialog(this.getScene().getWindow());
+		
+		List<Task> importTasks = DBManager.importState(file);
+		
+		this.tasks.clear();
+		
+		for(Task task : importTasks)
+		{
+			TaskNode taskNode = new TaskNode(new ObservableTask(task));
+			
+			this.tasks.add(taskNode);
+		}
+		
+		this.update();
 	}
 	
 	private void exportState()
 	{
-		System.out.println("export state");
+		FileChooser chooser = new FileChooser();
+		File file = chooser.showOpenDialog(this.getScene().getWindow());
+		
+		ArrayList<Task> tasks = new ArrayList();
+		
+		for(TaskNode taskNode : this.tasks)
+			tasks.add(taskNode.getTask());
+		
+		DBManager.exportState(file, tasks);
 	}
 	
 	private void insertCategory(CategoryNode category)

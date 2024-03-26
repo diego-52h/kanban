@@ -17,7 +17,7 @@ public class Task
 		this.data = data;
 		this.color = color;
 		
-		this.state = State.TO_DO;
+		this.state = null;
 	}
 	
 	public String getName() { return this.name; }

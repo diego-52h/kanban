@@ -31,7 +31,7 @@ public class TaskNode extends Label
 		{
 			loader.load();
 			
-			this.setText("task");
+			this.setText("T");
 			
 			this.modifyButton.setOnAction((ActionEvent event) -> { this.modify(); event.consume(); });
 			this.removeButton.setOnAction((ActionEvent event) -> { this.remove(); event.consume(); });

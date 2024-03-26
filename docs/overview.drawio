@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-26T18:27:02.438Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="eb-o8TAsjNsSkENiYFng" version="24.2.0" type="device">
+<mxfile host="app.diagrams.net" modified="2024-03-26T20:21:56.176Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="J_19cp1jSKAPiQp9wTpn" version="24.2.0" type="device">
   <diagram name="class diagram" id="vMHtdK9RL6ZQ6rPQC_Dp">
-    <mxGraphModel dx="2074" dy="1119" grid="1" gridSize="10" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
+    <mxGraphModel dx="1185" dy="639" grid="1" gridSize="10" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -79,7 +79,7 @@
         <mxCell id="YnePSGM-n-RpEL76VKnE-8" value="" style="line;strokeWidth=1;align=center;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontFamily=Source Code Pro;labelBackgroundColor=none;textOpacity=90;swimlaneFillColor=#deddda;fontSize=8;rounded=0;" parent="YnePSGM-n-RpEL76VKnE-6" vertex="1">
           <mxGeometry y="70" width="160" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="YnePSGM-n-RpEL76VKnE-9" value="(+) CategoryNode()" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Source Code Pro;labelBackgroundColor=none;textOpacity=90;swimlaneFillColor=#deddda;fontSize=6;rounded=0;" parent="YnePSGM-n-RpEL76VKnE-6" vertex="1">
+        <mxCell id="YnePSGM-n-RpEL76VKnE-9" value="&lt;div&gt;(+) CategoryNode()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(+) insertTask(task): void&lt;/div&gt;&lt;div&gt;(+) removeTask(task): void&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Source Code Pro;labelBackgroundColor=none;textOpacity=90;swimlaneFillColor=#deddda;fontSize=6;rounded=0;" parent="YnePSGM-n-RpEL76VKnE-6" vertex="1">
           <mxGeometry y="80" width="160" height="40" as="geometry" />
         </mxCell>
         <mxCell id="YnePSGM-n-RpEL76VKnE-10" value="" style="endArrow=none;html=1;endSize=12;startArrow=diamondThin;startSize=12;startFill=1;edgeStyle=orthogonalEdgeStyle;align=center;verticalAlign=middle;rounded=0;endFill=0;fontFamily=Source Code Pro;fontSize=8;labelBackgroundColor=none;fontStyle=1;" parent="1" source="YnePSGM-n-RpEL76VKnE-6" target="YnePSGM-n-RpEL76VKnE-2" edge="1">
@@ -107,7 +107,7 @@
         <mxCell id="YnePSGM-n-RpEL76VKnE-15" value="" style="line;strokeWidth=1;align=center;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;fontFamily=Source Code Pro;labelBackgroundColor=none;textOpacity=90;swimlaneFillColor=#deddda;fontSize=8;rounded=0;" parent="YnePSGM-n-RpEL76VKnE-13" vertex="1">
           <mxGeometry y="110" width="160" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="YnePSGM-n-RpEL76VKnE-16" value="&lt;div&gt;(+) BoardNode()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(-) createNew(): void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(-) importState(): void&lt;/div&gt;&lt;div&gt;(-) exportState(): void&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Source Code Pro;labelBackgroundColor=none;textOpacity=90;swimlaneFillColor=#deddda;fontSize=6;rounded=0;" parent="YnePSGM-n-RpEL76VKnE-13" vertex="1">
+        <mxCell id="YnePSGM-n-RpEL76VKnE-16" value="&lt;div&gt;(+) BoardNode()&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(-) createNew(): void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(-) importState(): void&lt;/div&gt;&lt;div&gt;(-) exportState(): void&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(-) insertCategory(category): void&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Source Code Pro;labelBackgroundColor=none;textOpacity=90;swimlaneFillColor=#deddda;fontSize=6;rounded=0;" parent="YnePSGM-n-RpEL76VKnE-13" vertex="1">
           <mxGeometry y="120" width="160" height="80" as="geometry" />
         </mxCell>
         <mxCell id="YnePSGM-n-RpEL76VKnE-17" value="" style="endArrow=none;html=1;endSize=12;startArrow=diamondThin;startSize=12;startFill=1;edgeStyle=orthogonalEdgeStyle;align=center;verticalAlign=middle;rounded=0;endFill=0;fontFamily=Source Code Pro;fontSize=8;labelBackgroundColor=none;fontStyle=1;" parent="1" source="YnePSGM-n-RpEL76VKnE-13" target="YnePSGM-n-RpEL76VKnE-6" edge="1">

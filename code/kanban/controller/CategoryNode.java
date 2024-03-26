@@ -10,12 +10,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.TransferMode;
 
+import kanban.controller.TaskNode;
+
 public class CategoryNode extends VBox
 {
-	private @FXML VBox tasks;
 	private @FXML Label name;
+	private @FXML VBox taskContainer;
 	
-	public CategoryNode()
+	public CategoryNode(String name)
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/category.fxml"));
 		
@@ -26,7 +28,15 @@ public class CategoryNode extends VBox
 		{
 			loader.load();
 			
-			this.name.setText("category");
+			this.name.setText(name);
+			
+			// <==
+			
+			this.insertTask(new TaskNode());
+			this.insertTask(new TaskNode());
+			this.insertTask(new TaskNode());
+			
+			// ==>
 			
 			this.setOnDragExited((DragEvent event) -> { this.setFocused(false); event.consume(); });
 			this.setOnDragEntered((DragEvent event) -> { this.setFocused(true); event.consume(); });
@@ -50,4 +60,7 @@ public class CategoryNode extends VBox
 			exception.printStackTrace();
 		}
 	}
+	
+	public void insertTask(TaskNode task) { this.taskContainer.getChildren().add(task); }
+	public void removeTask(TaskNode task) { this.taskContainer.getChildren().remove(task); }
 }

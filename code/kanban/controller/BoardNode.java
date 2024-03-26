@@ -9,7 +9,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 
+import kanban.controller.CategoryNode;
 import kanban.controller.EditorWindow;
 
 public class BoardNode extends BorderPane
@@ -20,7 +23,9 @@ public class BoardNode extends BorderPane
 	private @FXML Button importButton;
 	private @FXML Button exportButton;
 	
-	public BoardNode()
+	private @FXML HBox categoryContainer;
+	
+	public BoardNode(String name)
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/board.fxml"));
 		
@@ -31,7 +36,15 @@ public class BoardNode extends BorderPane
 		{
 			loader.load();
 			
-			this.name.setText("board");
+			this.name.setText(name);
+			
+			// <==
+			
+			this.insertCategory(new CategoryNode("C1"));
+			this.insertCategory(new CategoryNode("C2"));
+			this.insertCategory(new CategoryNode("C3"));
+			
+			// ==>
 			
 			this.createButton.setOnAction((ActionEvent event) -> { this.createNew(); event.consume(); });
 			this.importButton.setOnAction((ActionEvent event) -> { this.importState(); event.consume(); });
@@ -57,5 +70,11 @@ public class BoardNode extends BorderPane
 	private void exportState()
 	{
 		System.out.println("export state");
+	}
+	
+	private void insertCategory(CategoryNode category)
+	{
+		this.categoryContainer.getChildren().add(category);
+		this.categoryContainer.setHgrow(category, Priority.ALWAYS);
 	}
 }

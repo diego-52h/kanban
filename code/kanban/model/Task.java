@@ -11,13 +11,13 @@ public class Task
 	
 	private State state;
 	
-	public Task(String name, String data, String color)
+	public Task(String name, String data, String color, State state)
 	{
 		this.name = name;
 		this.data = data;
 		this.color = color;
 		
-		this.state = null;
+		this.state = state;
 	}
 	
 	public String getName() { return this.name; }

@@ -69,7 +69,7 @@ public class TaskNode extends Label
 		return this.task;
 	}
 	
-	private void update()
+	public void update()
 	{
 		this.setText(this.task.getName());
 		this.setColor(Color.web(this.task.getColor()));
@@ -77,7 +77,9 @@ public class TaskNode extends Label
 	
 	private void modify()
 	{
-		EditorWindow.launch(this.getScene().getWindow());
+		EditorWindow.launch(this.getTask(), this.getScene().getWindow());
+		
+		this.update();
 	}
 	
 	private void remove()

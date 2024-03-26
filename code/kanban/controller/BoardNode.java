@@ -71,9 +71,10 @@ public class BoardNode extends BorderPane
 	{
 		TaskNode task = new TaskNode();
 		
-		EditorWindow.launch(this.getScene().getWindow());
+		EditorWindow.launch(task.getTask(), this.getScene().getWindow());
 		
 		task.getTask().setState(State.TO_DO);
+		task.update();
 		
 		if(!this.tasks.add(task))
 			return;

@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 
 import javafx.stage.Stage;
@@ -17,6 +18,8 @@ import javafx.stage.Modality;
 import javafx.stage.Window;
 
 import javafx.scene.layout.BorderPane;
+
+import kanban.model.Task;
 
 public class EditorWindow extends BorderPane
 {
@@ -26,7 +29,18 @@ public class EditorWindow extends BorderPane
 	private @FXML TextField newName;
 	private @FXML ToggleGroup colors;
 	
-	public EditorWindow()
+	private Task task;
+	
+	private static final String COLORS[] = {
+		"#89BAFF",
+		"#81DDB6",
+		"#FEBF91",
+		"#BCB1F4",
+		"#EE9ECF",
+		"#F8DC7E",
+	};
+	
+	public EditorWindow(Task task)
 	{
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/editor.fxml"));
 		
@@ -37,8 +51,15 @@ public class EditorWindow extends BorderPane
 		{
 			loader.load();
 			
+			this.task = task;
+			
+			this.newName.setText(task.getName());
+			
 			this.cancelButton.setOnAction((ActionEvent event) -> { this.cancelChanges(); event.consume(); });
 			this.acceptButton.setOnAction((ActionEvent event) -> { this.acceptChanges(); event.consume(); });
+			
+			for(int i = 0; i < COLORS.length; i++)
+				this.colors.getToggles().get(i).setUserData(COLORS[i]); // https://i.imgflip.com/1hro6t.jpg
 		}
 		
 		catch(Exception exception)
@@ -47,9 +68,9 @@ public class EditorWindow extends BorderPane
 		}
 	}
 	
-	public static void launch(Window parentWindow)
+	public static void launch(Task task, Window parentWindow)
 	{
-		Parent root = new EditorWindow();
+		Parent root = new EditorWindow(task);
 		
 		Stage stage = new Stage();
 		Scene scene = new Scene(root, 280, 240);
@@ -67,14 +88,21 @@ public class EditorWindow extends BorderPane
 	
 	private void cancelChanges()
 	{
-		System.out.println("cancel changes");
-		
 		this.finish();
 	}
 	
 	private void acceptChanges()
 	{
-		System.out.println("accept changes");
+		Toggle selection = this.colors.getSelectedToggle();
+		
+		if(selection == null)
+			return;
+		
+		String name = this.newName.getText();
+		String color = (String) selection.getUserData();
+		
+		this.task.setName(name);
+		this.task.setColor(color);
 		
 		this.finish();
 	}

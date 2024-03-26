@@ -30,16 +30,20 @@ public class DBManager
 				String color = scanner.next();
 				String auxState = scanner.next();
 				
-				State state = State.TO_DO;
+				State state = State.NONE;
 				
 				switch(auxState)
 				{
-					case "TO_DO":
-						state = State.TO_DO;
+					case "NONE":
+						state = State.NONE;
 						break;
 					
-					case "ON_IT":
-						state = State.ON_IT;
+					case "TODO":
+						state = State.TODO;
+						break;
+					
+					case "ONIT":
+						state = State.ONIT;
 						break;
 					
 					case "DONE":
@@ -73,16 +77,20 @@ public class DBManager
 				String name = task.getName();
 				String data = task.getData();
 				String color = task.getColor();
-				String state = "TO_DO";
+				String state = "NONE";
 				
 				switch(task.getState())
 				{
-					case State.TO_DO:
-						state = "TO_DO";
+					case State.NONE:
+						state = "NONE";
 						break;
 					
-					case State.ON_IT:
-						state = "ON_IT";
+					case State.TODO:
+						state = "TODO";
+						break;
+					
+					case State.ONIT:
+						state = "ONIT";
 						break;
 					
 					case State.DONE:

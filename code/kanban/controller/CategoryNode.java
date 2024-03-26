@@ -12,6 +12,14 @@ import javafx.scene.input.TransferMode;
 
 import kanban.controller.TaskNode;
 
+// <==
+
+import kanban.controller.ObservableTask;
+
+import kanban.model.State;
+
+// ==>
+
 public class CategoryNode extends VBox
 {
 	private @FXML Label name;
@@ -32,9 +40,9 @@ public class CategoryNode extends VBox
 			
 			// <==
 			
-			this.insertTask(new TaskNode());
-			this.insertTask(new TaskNode());
-			this.insertTask(new TaskNode());
+			this.insertTask(new TaskNode(new ObservableTask("T1", "", "#FEBF91", State.TO_DO)));
+			this.insertTask(new TaskNode(new ObservableTask("T2", "", "#FEBF91", State.TO_DO)));
+			this.insertTask(new TaskNode(new ObservableTask("T3", "", "#FEBF91", State.TO_DO)));
 			
 			// ==>
 			

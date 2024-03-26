@@ -14,14 +14,19 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TransferMode;
 
 import kanban.controller.EditorWindow;
+import kanban.controller.ObservableTask;
 
 public class TaskNode extends Label
 {
 	private @FXML MenuItem modifyButton;
 	private @FXML MenuItem removeButton;
 	
-	public TaskNode()
+	private final ObservableTask task;
+	
+	public TaskNode(ObservableTask task)
 	{
+		this.task = task;
+		
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/task.fxml"));
 		
 		loader.setRoot(this);
@@ -31,7 +36,7 @@ public class TaskNode extends Label
 		{
 			loader.load();
 			
-			this.setText("T");
+			this.task.addListener((curr) -> { this.update(); });
 			
 			this.modifyButton.setOnAction((ActionEvent event) -> { this.modify(); event.consume(); });
 			this.removeButton.setOnAction((ActionEvent event) -> { this.remove(); event.consume(); });
@@ -45,12 +50,23 @@ public class TaskNode extends Label
 				
 				event.consume();
 			});
+			
+			this.setOnMouseExited((MouseEvent event) -> { this.setColor(this.task.getColor(), 0); event.consume(); });
+			this.setOnMouseEntered((MouseEvent event) -> { this.setColor(this.task.getColor(), 20); event.consume(); });
+			
+			this.update();
 		}
 		
 		catch(Exception exception)
 		{
 			exception.printStackTrace();
 		}
+	}
+	
+	private void update()
+	{
+		this.setText(task.getName());
+		this.setColor(task.getColor(), 0);
 	}
 	
 	private void modify()
@@ -61,5 +77,10 @@ public class TaskNode extends Label
 	private void remove()
 	{
 		System.out.println("remove");
+	}
+	
+	private void setColor(String color, int percentage)
+	{
+		this.setStyle("-fx-background-color: derive(" + color + ", " + percentage + "%);");
 	}
 }

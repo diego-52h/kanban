@@ -94,8 +94,9 @@ public class BoardNode extends BorderPane
 	{
 		ObservableTask task = new ObservableTask("", "", "#000000", State.NONE);
 		
+		EditorWindow.launch(task, this.getScene().getWindow());
+		
 		task.addListener((curr) -> { this.update(); });
-		task.setState(State.TODO);
 		
 		this.tasks.add(new TaskNode(task));
 	}

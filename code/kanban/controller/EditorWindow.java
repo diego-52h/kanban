@@ -19,6 +19,10 @@ import javafx.stage.Window;
 
 import javafx.scene.layout.BorderPane;
 
+import kanban.controller.ObservableTask;
+
+import kanban.model.State;
+
 public class EditorWindow extends BorderPane
 {
 	private @FXML Button cancelButton;
@@ -27,8 +31,21 @@ public class EditorWindow extends BorderPane
 	private @FXML TextField newName;
 	private @FXML ToggleGroup colors;
 	
-	public EditorWindow()
+	private final ObservableTask task;
+	
+	private static final String COLORS[] = {
+		"#89BAFF",
+		"#81DDB6",
+		"#FEBF91",
+		"#BCB1F4",
+		"#EE9ECF",
+		"#F8DC7E",
+	};
+	
+	public EditorWindow(ObservableTask task)
 	{
+		this.task = task;
+		
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/editor.fxml"));
 		
 		loader.setRoot(this);
@@ -37,6 +54,11 @@ public class EditorWindow extends BorderPane
 		try
 		{
 			loader.load();
+			
+			this.newName.setText(task.getName());
+			
+			for(int i = 0; i < COLORS.length; i++)
+				this.colors.getToggles().get(i).setUserData(COLORS[i]); // https://i.imgflip.com/1hro6t.jpg
 			
 			this.cancelButton.setOnAction((ActionEvent event) -> { this.cancelChanges(); event.consume(); });
 			this.acceptButton.setOnAction((ActionEvent event) -> { this.acceptChanges(); event.consume(); });
@@ -48,9 +70,9 @@ public class EditorWindow extends BorderPane
 		}
 	}
 	
-	public static void launch(Window parentWindow)
+	public static void launch(ObservableTask task, Window parentWindow)
 	{
-		Parent root = new EditorWindow();
+		Parent root = new EditorWindow(task);
 		
 		Stage stage = new Stage();
 		Scene scene = new Scene(root, 280, 240);
@@ -77,6 +99,15 @@ public class EditorWindow extends BorderPane
 		
 		if(selection == null)
 			return;
+		
+		String name = this.newName.getText();
+		String color = (String) selection.getUserData();
+		
+		this.task.setName(name);
+		this.task.setColor(color);
+		
+		if(this.task.getState() == State.NONE)
+			this.task.setState(State.TODO);
 		
 		this.finish();
 	}

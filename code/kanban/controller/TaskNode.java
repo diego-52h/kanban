@@ -78,7 +78,7 @@ public class TaskNode extends Label
 	
 	private void modify()
 	{
-		EditorWindow.launch(this.getScene().getWindow());
+		EditorWindow.launch(this.getTask(), this.getScene().getWindow());
 	}
 	
 	private void remove()

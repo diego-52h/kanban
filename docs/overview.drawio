@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-03-26T20:21:56.176Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="J_19cp1jSKAPiQp9wTpn" version="24.2.0" type="device">
+<mxfile host="app.diagrams.net" modified="2024-03-26T21:26:50.747Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:124.0) Gecko/20100101 Firefox/124.0" etag="Es3cXTah4Sb2VPFyyxwe" version="24.2.0" type="device">
   <diagram name="class diagram" id="vMHtdK9RL6ZQ6rPQC_Dp">
-    <mxGraphModel dx="1185" dy="639" grid="1" gridSize="10" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
+    <mxGraphModel dx="1430" dy="772" grid="1" gridSize="10" guides="0" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -40,7 +40,7 @@
             <mxRectangle x="80" y="240" width="160" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="bq8K0xjKcNxAhhVfg359-241" value="&lt;div&gt;TO_DO&lt;/div&gt;&lt;div&gt;ON_IT&lt;/div&gt;&lt;div&gt;DONE&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Source Code Pro;labelBackgroundColor=none;textOpacity=90;swimlaneFillColor=#deddda;fontSize=6;rounded=0;" parent="bq8K0xjKcNxAhhVfg359-240" vertex="1">
+        <mxCell id="bq8K0xjKcNxAhhVfg359-241" value="&lt;div&gt;NONE&lt;br&gt;&lt;/div&gt;&lt;div&gt;TODO&lt;/div&gt;&lt;div&gt;ONIT&lt;/div&gt;&lt;div&gt;DONE&lt;br&gt;&lt;/div&gt;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Source Code Pro;labelBackgroundColor=none;textOpacity=90;swimlaneFillColor=#deddda;fontSize=6;rounded=0;" parent="bq8K0xjKcNxAhhVfg359-240" vertex="1">
           <mxGeometry y="30" width="160" height="50" as="geometry" />
         </mxCell>
         <mxCell id="bq8K0xjKcNxAhhVfg359-245" value="" style="endArrow=none;html=1;endSize=12;startArrow=none;startSize=12;startFill=0;edgeStyle=orthogonalEdgeStyle;align=center;verticalAlign=middle;rounded=0;endFill=0;fontFamily=Source Code Pro;fontSize=8;labelBackgroundColor=none;fontStyle=1;" parent="1" source="bq8K0xjKcNxAhhVfg359-240" target="bq8K0xjKcNxAhhVfg359-236" edge="1">

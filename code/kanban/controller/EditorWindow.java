@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 
 import javafx.stage.Stage;
@@ -67,14 +68,15 @@ public class EditorWindow extends BorderPane
 	
 	private void cancelChanges()
 	{
-		System.out.println("cancel changes");
-		
 		this.finish();
 	}
 	
 	private void acceptChanges()
 	{
-		System.out.println("accept changes");
+		Toggle selection = this.colors.getSelectedToggle();
+		
+		if(selection == null)
+			return;
 		
 		this.finish();
 	}

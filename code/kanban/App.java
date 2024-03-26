@@ -17,7 +17,7 @@ public class App extends Application
 	@Override
 	public void start(Stage stage)
 	{
-		Parent root = new BoardNode();
+		Parent root = new BoardNode("Kanban Board");
 		
 		Scene scene = new Scene(root, this.SIZE_X, this.SIZE_Y);
 		

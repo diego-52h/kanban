@@ -21,10 +21,12 @@ public class CategoryNode extends VBox
 	private @FXML VBox taskContainer;
 	
 	private final State state;
+	private final String nameText;
 	
 	public CategoryNode(String name, State state)
 	{
 		this.state = state;
+		this.nameText = name;
 		
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/category.fxml"));
 		
@@ -34,8 +36,6 @@ public class CategoryNode extends VBox
 		try
 		{
 			loader.load();
-			
-			this.name.setText(name);
 			
 			this.setOnDragExited((DragEvent event) -> { this.setFocused(false); event.consume(); });
 			this.setOnDragEntered((DragEvent event) -> { this.setFocused(true); event.consume(); });
@@ -57,6 +57,8 @@ public class CategoryNode extends VBox
 				event.setDropCompleted(true);
 				event.consume();
 			});
+			
+			this.update();
 		}
 		
 		catch(Exception exception)
@@ -65,10 +67,13 @@ public class CategoryNode extends VBox
 		}
 	}
 	
-	public State getState() { return this.state; }
-	
-	public void insertTask(TaskNode task) { this.taskContainer.getChildren().add(task); }
-	public void removeTask(TaskNode task) { this.taskContainer.getChildren().remove(task); }
+	public void insertTask(TaskNode task) { this.taskContainer.getChildren().add(task); this.update(); }
+	public void removeTask(TaskNode task) { this.taskContainer.getChildren().remove(task); this.update(); }
 	
 	public void removeTasks() { this.taskContainer.getChildren().clear(); }
+	
+	private void update()
+	{
+		this.name.setText(this.nameText + " - " + this.taskContainer.getChildren().size());
+	}
 }

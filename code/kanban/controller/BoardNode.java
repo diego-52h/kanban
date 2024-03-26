@@ -58,15 +58,17 @@ public class BoardNode extends BorderPane
 			
 			this.name.setText(name);
 			
-			this.insertCategory(new CategoryNode("To Do", State.TODO));
-			this.insertCategory(new CategoryNode("On It", State.ONIT));
-			this.insertCategory(new CategoryNode("Done", State.DONE));
+			this.insertCategory("To Do", State.TODO);
+			this.insertCategory("On It", State.ONIT);
+			this.insertCategory("Done", State.DONE);
 			
 			this.createButton.setOnAction((ActionEvent event) -> { this.createNew(); event.consume(); });
 			this.importButton.setOnAction((ActionEvent event) -> { this.importState(); event.consume(); });
 			this.exportButton.setOnAction((ActionEvent event) -> { this.exportState(); event.consume(); });
 			
 			this.tasks.addListener((ListChangeListener) (change) -> { this.update(); });
+			
+			this.update();
 		}
 		
 		catch(Exception exception)
@@ -97,15 +99,20 @@ public class BoardNode extends BorderPane
 			this.tasks.remove(task);
 	}
 	
+	private void addTask(ObservableTask task)
+	{
+		task.addListener((curr) -> { this.update(); });
+		
+		this.tasks.add(new TaskNode(task));
+	}
+	
 	private void createNew()
 	{
 		ObservableTask task = new ObservableTask("", "", "#000000", State.NONE);
 		
 		EditorWindow.launch(task, this.getScene().getWindow());
 		
-		task.addListener((curr) -> { this.update(); });
-		
-		this.tasks.add(new TaskNode(task));
+		this.addTask(task);
 	}
 	
 	private void importState()
@@ -118,11 +125,7 @@ public class BoardNode extends BorderPane
 		this.tasks.clear();
 		
 		for(Task task : importTasks)
-		{
-			TaskNode taskNode = new TaskNode(new ObservableTask(task));
-			
-			this.tasks.add(taskNode);
-		}
+			this.addTask(new ObservableTask(task));
 		
 		this.update();
 	}
@@ -140,9 +143,11 @@ public class BoardNode extends BorderPane
 		DBManager.exportState(file, tasks);
 	}
 	
-	private void insertCategory(CategoryNode category)
+	private void insertCategory(String name, State state)
 	{
-		this.categories.put(category.getState(), category);
+		CategoryNode category = new CategoryNode(name, state);
+		
+		this.categories.put(state, category);
 		
 		this.categoryContainer.getChildren().add(category);
 		this.categoryContainer.setHgrow(category, Priority.ALWAYS);

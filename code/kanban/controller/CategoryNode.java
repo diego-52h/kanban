@@ -12,21 +12,20 @@ import javafx.scene.input.TransferMode;
 
 import kanban.controller.TaskNode;
 
-// <==
-
-import kanban.controller.ObservableTask;
-
 import kanban.model.State;
-
-// ==>
+import kanban.model.Task;
 
 public class CategoryNode extends VBox
 {
 	private @FXML Label name;
 	private @FXML VBox taskContainer;
 	
-	public CategoryNode(String name)
+	private final State state;
+	
+	public CategoryNode(String name, State state)
 	{
+		this.state = state;
+		
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/category.fxml"));
 		
 		loader.setRoot(this);
@@ -38,25 +37,22 @@ public class CategoryNode extends VBox
 			
 			this.name.setText(name);
 			
-			// <==
-			
-			this.insertTask(new TaskNode(new ObservableTask("T1", "", "#FEBF91", State.TO_DO)));
-			this.insertTask(new TaskNode(new ObservableTask("T2", "", "#FEBF91", State.TO_DO)));
-			this.insertTask(new TaskNode(new ObservableTask("T3", "", "#FEBF91", State.TO_DO)));
-			
-			// ==>
-			
 			this.setOnDragExited((DragEvent event) -> { this.setFocused(false); event.consume(); });
 			this.setOnDragEntered((DragEvent event) -> { this.setFocused(true); event.consume(); });
 			
 			this.setOnDragOver((DragEvent event) -> {
-				event.acceptTransferModes(TransferMode.MOVE);
+				Task task = ((TaskNode) event.getGestureSource()).getTask();
+				
+				if(task.getState() != this.state)
+					event.acceptTransferModes(TransferMode.MOVE);
 				
 				event.consume();
 			});
 			
 			this.setOnDragDropped((DragEvent event) -> {
-				System.out.println("dropped item: " + ((TaskNode) event.getGestureSource()).getText());
+				Task task = ((TaskNode) event.getGestureSource()).getTask();
+				
+				task.setState(this.state);
 				
 				event.setDropCompleted(true);
 				event.consume();
@@ -69,6 +65,10 @@ public class CategoryNode extends VBox
 		}
 	}
 	
+	public State getState() { return this.state; }
+	
 	public void insertTask(TaskNode task) { this.taskContainer.getChildren().add(task); }
 	public void removeTask(TaskNode task) { this.taskContainer.getChildren().remove(task); }
+	
+	public void removeTasks() { this.taskContainer.getChildren().clear(); }
 }

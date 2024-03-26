@@ -16,6 +16,8 @@ import javafx.scene.input.TransferMode;
 import kanban.controller.EditorWindow;
 import kanban.controller.ObservableTask;
 
+import kanban.model.State;
+
 public class TaskNode extends Label
 {
 	private @FXML MenuItem modifyButton;
@@ -63,6 +65,11 @@ public class TaskNode extends Label
 		}
 	}
 	
+	public ObservableTask getTask()
+	{
+		return this.task;
+	}
+	
 	private void update()
 	{
 		this.setText(task.getName());
@@ -76,7 +83,7 @@ public class TaskNode extends Label
 	
 	private void remove()
 	{
-		System.out.println("remove");
+		this.task.setState(State.NONE);
 	}
 	
 	private void setColor(String color, int percentage)

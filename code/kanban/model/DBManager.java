@@ -12,6 +12,14 @@ import kanban.model.Task;
 
 public class DBManager
 {
+	/**
+	 * Imports a list of tasks from a file produced by using
+	 * DBManager.exportState()
+	 * 
+	 * @param file The file to read tasks from
+	 * 
+	 * @return A <code> List </code> containing the imported list of tasks
+	 */
 	public static List<Task> importState(File file)
 	{
 		List<Task> tasks = new ArrayList();
@@ -63,6 +71,13 @@ public class DBManager
 		return tasks;
 	}
 	
+	/**
+	 * Exports a list of tasks into a file in order to be recovered later by using
+	 * DBManager.importState()
+	 * 
+	 * @param file The file to write the task list into
+	 * @param tasks The list of tasks to export
+	 */
 	public static void exportState(File file, List<Task> tasks)
 	{
 		if(file == null)

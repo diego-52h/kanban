@@ -70,12 +70,19 @@ public class TaskNode extends Label
 		return this.task;
 	}
 	
+	/**
+	 * Updates the graphical elements of this task to match the state
+	 * held by the internal <code> task </code> object
+	 */
 	private void update()
 	{
 		this.setText(task.getName());
 		this.setColor(task.getColor(), 0);
 	}
 	
+	/**
+	 * Launches a new editor instance for this task
+	 */
 	private void modify()
 	{
 		EditorWindow.launch(this.getTask(), this.getScene().getWindow());

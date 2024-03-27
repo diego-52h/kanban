@@ -2,15 +2,25 @@ package kanban.model;
 
 import kanban.model.State;
 
+/**
+ * Represents a task
+ */
 public class Task
 {
 	private String name;
 	private String data;
-	
-	private String color; // Hex code
+	private String color;
 	
 	private State state;
 	
+	/**
+	 * Task constructor
+	 * 
+	 * @param name The name of this task
+	 * @param data Description or other data about this task
+	 * @param color A hexadecimal color value for this task
+	 * @param state The current state of this task
+	 */
 	public Task(String name, String data, String color, State state)
 	{
 		this.name = name;

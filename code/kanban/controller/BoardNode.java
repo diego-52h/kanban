@@ -77,6 +77,9 @@ public class BoardNode extends BorderPane
 		}
 	}
 	
+	/**
+	 * Updates the graphical elements of this board
+	 */
 	private void update()
 	{
 		for(CategoryNode category : this.categories.values())
@@ -99,6 +102,12 @@ public class BoardNode extends BorderPane
 			this.tasks.remove(task);
 	}
 	
+	/**
+	 * Registers <code> task </code> on this board instance and attatch
+	 * a listener to it
+	 * 
+	 * @param task The task to register
+	 */
 	private void addTask(ObservableTask task)
 	{
 		task.addListener((curr) -> { this.update(); });
@@ -106,6 +115,10 @@ public class BoardNode extends BorderPane
 		this.tasks.add(new TaskNode(task));
 	}
 	
+	/**
+	 * Creates a new task, launches an editor window for it and registers it
+	 * onto this board
+	 */
 	private void createNew()
 	{
 		ObservableTask task = new ObservableTask("", "", "#000000", State.NONE);
@@ -115,6 +128,9 @@ public class BoardNode extends BorderPane
 		this.addTask(task);
 	}
 	
+	/**
+	 * Loads a list of tasks from a file
+	 */
 	private void importState()
 	{
 		FileChooser chooser = new FileChooser();
@@ -130,6 +146,9 @@ public class BoardNode extends BorderPane
 		this.update();
 	}
 	
+	/**
+	 * Saves the current tasks to a file
+	 */
 	private void exportState()
 	{
 		FileChooser chooser = new FileChooser();

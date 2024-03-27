@@ -70,6 +70,13 @@ public class EditorWindow extends BorderPane
 		}
 	}
 	
+	/**
+	 * Launch a new <code> Window </code> that contains an
+	 * <code> EditorWindow </code> on it.
+	 * 
+	 * @param task Task to be edited
+	 * @param parentWindow Window from which this new instance was launched
+	 */
 	public static void launch(ObservableTask task, Window parentWindow)
 	{
 		Parent root = new EditorWindow(task);
@@ -112,6 +119,9 @@ public class EditorWindow extends BorderPane
 		this.finish();
 	}
 	
+	/**
+	 * Close the window where this editor is being displayed
+	 */
 	private void finish()
 	{
 		((Stage) this.getScene().getWindow()).close();

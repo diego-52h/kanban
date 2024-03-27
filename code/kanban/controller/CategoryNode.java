@@ -72,6 +72,9 @@ public class CategoryNode extends VBox
 	
 	public void removeTasks() { this.taskContainer.getChildren().clear(); }
 	
+	/**
+	 * Updates the graphical elements of this category
+	 */
 	private void update()
 	{
 		this.name.setText(this.nameText + " - " + this.taskContainer.getChildren().size());
